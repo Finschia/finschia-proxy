@@ -36,7 +36,7 @@ RUN ARCH=$(uname -m) && WASMVM_VERSION=$(go list -m github.com/Finschia/wasmvm |
 # Add source files
 COPY . .
 
-# Build fnsad binary
+# Build fnsad-proxy binary
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/root/go/pkg/mod \
     GOWORK=off go build \
@@ -44,7 +44,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
         -tags "netgo,ledger,muslc,goleveldb" \
         -ldflags \
             "-X github.com/Finschia/finschia-sdk/version.Name=finschia \
-            -X github.com/Finschia/finschia-sdk/version.AppName=fnsad \
+            -X github.com/Finschia/finschia-sdk/version.AppName=fnsad-proxy \
     		-X github.com/Finschia/finschia-sdk/version.Version=${GIT_VERSION} \
     		-X github.com/Finschia/finschia-sdk/version.Commit=${GIT_COMMIT} \
     		-X github.com/Finschia/ostracon/version.TMCoreSemVer=${OST_VERSION} \

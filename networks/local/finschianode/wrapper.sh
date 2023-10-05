@@ -3,7 +3,7 @@
 ##
 ## Input parameters
 ##
-BINARY=/finschia/${BINARY:-fnsad}
+BINARY=/finschia/${BINARY:-fnsad-proxy}
 ID=${ID:-0}
 LOG=${LOG:-finschia.log}
 
