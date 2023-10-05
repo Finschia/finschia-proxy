@@ -120,7 +120,8 @@ func InitTestnet(
 	nodeIDs := make([]string, numValidators)
 	valPubKeys := make([]cryptotypes.PubKey, numValidators)
 
-	appConfig := srvconfig.DefaultConfig()
+	customAppTemplate, config := initAppConfig()
+	appConfig := config.(*CustomAppConfig)
 	appConfig.MinGasPrices = minGasPrices
 	appConfig.API.Enable = true
 	appConfig.Telemetry.Enabled = true
@@ -246,6 +247,7 @@ func InitTestnet(
 			return err
 		}
 
+		srvconfig.SetConfigTemplate(customAppTemplate)
 		srvconfig.WriteConfigFile(filepath.Join(nodeDir, "config/app.toml"), appConfig)
 	}
 
