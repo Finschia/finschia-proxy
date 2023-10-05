@@ -24,7 +24,7 @@ jobs:
     outputs:
       get_diff: ${{ steps.diff.outputs.diff }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get diff
         id: diff
         uses: technote-space/get-diff-action@v6.1.2
@@ -41,7 +41,7 @@ jobs:
     outputs:
       cosmwasm_versions: ${{ steps.releases.outputs.versions }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get cosmwasm releases
         id: releases
         run: |
@@ -57,7 +57,7 @@ jobs:
       matrix:
         go-arch: ["amd64"]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-go@v4
         with:
           go-version: 1.18
@@ -77,7 +77,7 @@ jobs:
       matrix:
         versions: ${{ fromJson(needs.get-cosmwasm-releases.outputs.cosmwasm_versions) }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-go@v4
         with:
           go-version: 1.18
@@ -117,7 +117,7 @@ jobs:
     needs: check-diffs
     if: ${{ needs.check-diffs.outputs.get_diff }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: docker/setup-buildx-action@v2
       - name: Build and export
         uses: docker/build-push-action@v4
@@ -140,7 +140,7 @@ jobs:
       matrix:
         versions: ${{ fromJson(needs.get-cosmwasm-releases.outputs.cosmwasm_versions) }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: docker/setup-buildx-action@v2
       - name: Download smart contracts
         uses: dsaltares/fetch-gh-release-asset@master
