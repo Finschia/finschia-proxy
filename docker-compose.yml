@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  fnsadnode0:
+    container_name: fnsadnode0
+    image: "finschia/finschianode:localnet"
+    ports:
+      - "26656-26657:26656-26657"
+    environment:
+      - ID=0
+      - LOG=${LOG:-finschia.log}
+    volumes:
+      - ./mytestnet:/data:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.2
+
+  fnsadnode1:
+    container_name: fnsadnode1
+    image: "finschia/finschianode:localnet"
+    ports:
+      - "26659-26660:26656-26657"
+    environment:
+      - ID=1
+      - LOG=${LOG:-finschia.log}
+    volumes:
+      - ./mytestnet:/data:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.3
+
+  fnsadnode2:
+    container_name: fnsadnode2
+    image: "finschia/finschianode:localnet"
+    environment:
+      - ID=2
+      - LOG=${LOG:-finschia.log}
+    ports:
+      - "26661-26662:26656-26657"
+    volumes:
+      - ./mytestnet:/data:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.4
+
+  fnsadnode3:
+    container_name: fnsadnode3
+    image: "finschia/finschianode:localnet"
+    environment:
+      - ID=3
+      - LOG=${LOG:-finschia.log}
+    ports:
+      - "26663-26664:26656-26657"
+    volumes:
+      - ./mytestnet:/data:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.5
+
+networks:
+  localnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      -
+        subnet: 192.168.10.0/16
+
