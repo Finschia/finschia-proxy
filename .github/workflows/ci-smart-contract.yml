@@ -8,7 +8,7 @@ on:
       - main
 
 env:
-  TEST_DOCKER_IMAGE: finschianode:smartcontractci
+  TEST_DOCKER_IMAGE: finschianode-proxy:smartcontractci
 
 jobs:
   cleanup-runs:
@@ -66,8 +66,8 @@ jobs:
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
-          name: fnsad
-          path: ./build/fnsad
+          name: fnsad-proxy
+          path: ./build/fnsad-proxy
   
   test-smart-contract-on-local-node:
     runs-on: ubuntu-latest
@@ -92,7 +92,7 @@ jobs:
       - name: Download build
         uses: actions/download-artifact@v3
         with:
-          name: fnsad
+          name: fnsad-proxy
           path: ./build
       - name: Build install
         run: make install
@@ -103,14 +103,14 @@ jobs:
       - name: Start local node
         id: start
         run: |
-          fnsad start &
+          fnsad-proxy start &
           sleep 1
       - name: CI test
         run: bash ./ci_test/queue_ci.sh
         shell: bash
       - name: Stop local node
         if: ${{ always() && steps.start.conclusion == 'success' }}
-        run: kill $(ps -ef | grep "fnsad start" | grep -v grep | awk '{print $2}')
+        run: kill $(ps -ef | grep "fnsad-proxy start" | grep -v grep | awk '{print $2}')
   
   build-finschia-docker-image:
     runs-on: ubuntu-latest
@@ -161,7 +161,8 @@ jobs:
           docker image ls -a
       - name: Set configure file
         run: |
-          export FNSAD="docker run -i --rm -p 26656:26656 -p 26657:26657 -v ${pwd}/.finschia:/root/.finschia ${{ env.TEST_DOCKER_IMAGE }} fnsad"
+          export FNSAD="docker run -i --rm -p 26656:26656 -p 26657:26657 -v $(pwd)/.fnsap:/root/.fnsap ${{ env.TEST_DOCKER_IMAGE }} fnsad-proxy"
+          export CHAIN_DIR="/root/.fnsap"
           ./init_single.sh
         shell: bash
       # sleep 5 seconds to wait for finschia to start up
@@ -170,10 +171,10 @@ jobs:
         run: |
           container_id=$(docker run -d \
             -p 26656:26656 -p 26657:26657 \
-            -v ${pwd}/.finschia:/root/.finschia \
+            -v $(pwd)/.fnsap:/root/.fnsap \
             -v $(pwd)/ci_test:/root/ci_test \
             -v $(pwd)/contracts:/root/contracts \
-            ${{ env.TEST_DOCKER_IMAGE }} fnsad start)
+            ${{ env.TEST_DOCKER_IMAGE }} fnsad-proxy start --home=/root/.fnsap)
           echo "container_id=$container_id" >> "$GITHUB_OUTPUT"
           sleep 5
       - name: CI test

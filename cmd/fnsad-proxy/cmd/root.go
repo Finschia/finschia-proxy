@@ -140,10 +140,10 @@ func DefaultCustomAppConfig() *CustomAppConfig {
 			QueryGasLimit: 300000,
 		},
 		TxFilter: TxFilterConfig{
-			AllowedTargets:        []string{"\"cosmos.bank\""},
+			AllowedTargets:        []string{"\"cosmos\", \"lbm\", \"ibc\", \"cosmwasm\""},
 			InitialBlockHeight:    0,
 			AllowedContracts:      []string{},
-			DisableContractFilter: false,
+			DisableContractFilter: true,
 		},
 	}
 }

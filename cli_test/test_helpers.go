@@ -1405,6 +1405,7 @@ func newValidator(f *Fixtures, cfg testnet.Config, appCfg *fnsacmd.CustomAppConf
 	buf := bufio.NewReader(os.Stdin)
 
 	ctx.Viper.Set(proxyante.FlagTxFilter, proxyante.DefaultTxFilter())
+	ctx.Viper.Set(proxyante.FlagDisableFilter, proxyante.DefaultDisableFilter())
 
 	appCfg.Pruning = cfg.PruningStrategy
 	appCfg.MinGasPrices = cfg.MinGasPrices
