@@ -83,8 +83,6 @@ func (tfd TxFilterDecorator) filterWasmLogics(msg sdk.Msg) error {
 		} else if !tfd.Options.AllowedContract[wasmExec.Contract] {
 			return fmt.Errorf("%s is not allowed contract", wasmExec.Contract)
 		}
-	} else {
-		return fmt.Errorf("%s is not allowed on proxy node", sdk.MsgTypeURL(msg))
 	}
 	return nil
 }

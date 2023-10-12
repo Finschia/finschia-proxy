@@ -16,5 +16,9 @@ func (msc AppOptionsMock) Get(key string) any {
 }
 
 func DefaultTxFilter() []string {
-	return []string{"cosmos.bank"}
+	return []string{"cosmos", "lbm", "cosmwasm", "ibc"}
+}
+
+func DefaultDisableFilter() bool {
+	return true
 }
