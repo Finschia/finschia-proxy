@@ -3,7 +3,7 @@
 set -e
 
 # get module version from go.mod
-module_version=$(grep -E '^module github\.com/Finschia/finschia/v.*$' go.mod | cut -d / -f 4)
+module_version=$(grep -E '^module github\.com/Finschia/finschia-proxy/v.*$' go.mod | cut -d / -f 4)
 if [ -z "$module_version" ]
 then
 	echo module version not found: you must update the script >&2
