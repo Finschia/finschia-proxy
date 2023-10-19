@@ -32,9 +32,12 @@ endif
 
 # process build tags
 
-build_tags = netgo static_wasm muslc
+build_tags = netgo
 ifeq ($(LEDGER_ENABLED),true)
 	build_tags += ledger
+endif
+ifeq ($(LINK_STATICALLY),true)
+	build_tags += static_wasm muslc
 endif
 
 build_tags += $(BUILD_TAGS)
@@ -61,12 +64,14 @@ ldflags += $(LDFLAGS)
 ldflags := $(strip $(ldflags))
 
 BUILD_FLAGS := -tags "$(build_tags)" -ldflags '$(ldflags)'
-CGO_CFLAGS  := -I$(TEMPDIR)/include
-CGO_LDFLAGS := -L$(TEMPDIR)/lib
-ifeq ($(OS_NAME),darwin)
-	CGO_LDFLAGS += -lz -lbz2
-else
-	CGO_LDFLAGS += -static -lwasmvm_muslc -lm
+ifeq ($(LINK_STATICALLY),true)
+	CGO_CFLAGS  := -I$(TEMPDIR)/include
+    CGO_LDFLAGS := -L$(TEMPDIR)/lib
+	ifeq ($(OS_NAME),darwin)
+		CGO_LDFLAGS += -lz -lbz2
+	else
+		CGO_LDFLAGS += -static -lwasmvm_muslc -lm
+	endif
 endif
 
 
@@ -80,10 +85,11 @@ $(TEMPDIR)/:
 	mkdir -p $(TEMPDIR)/
 
 wasmvmlib: $(TEMPDIR)/
+ifeq ($(LINK_STATICALLY),true)
 	@mkdir -p $(TEMPDIR)/lib
     ifeq (",$(wildcard $(TEMPDIR)/lib/libwasmvm*.a)")
         ifeq ($(OS_NAME),darwin)
-	        wget https://github.com/Finschia/wasmvm/releases/download/$(WASMVM_VERSION)/libwasmvmstatic_darwin.a -O $(TEMPDIR)/lib/libwasmvmstatic_darwin.a
+	        curl -L https://github.com/Finschia/wasmvm/releases/download/$(WASMVM_VERSION)/libwasmvmstatic_darwin.a -o $(TEMPDIR)/lib/libwasmvmstatic_darwin.a
         else
             ifeq ($(ARCH),amd64)
 	            wget https://github.com/Finschia/wasmvm/releases/download/$(WASMVM_VERSION)/libwasmvm_muslc.x86_64.a -O $(TEMPDIR)/lib/libwasmvm_muslc.a
@@ -92,6 +98,7 @@ wasmvmlib: $(TEMPDIR)/
             endif
         endif
     endif
+endif
 
 # command for make build and make install
 build: BUILDARGS=-o $(BUILDDIR)/

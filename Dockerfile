@@ -3,7 +3,7 @@
 # Simple usage with a mounted data directory:
 # > docker build --platform="linux/amd64" -t finschia/finschianode-proxy . --build-arg ARCH=x86_64
 # > docker run -it -p 26656:26656 -p 26657:26657 -v ~/.finschia:/root/.finschia finschia/finschianode-proxy fnsad-proxy init
-# > docker run -it -p 26656:26656 -p 26657:26657 -v ~/.finschia:/root/.finschia -v finschia/finschianode-proxy fnsad-proxy start --rpc.laddr=tcp://0.0.0.0:26657 --p2p.laddr=tcp://0.0.0.0:26656
+# > docker run -it -p 26656:26656 -p 26657:26657 -v ~/.finschia:/root/.finschia finschia/finschianode-proxy fnsad-proxy start --rpc.laddr=tcp://0.0.0.0:26657 --p2p.laddr=tcp://0.0.0.0:26656
 
 ARG GO_VERSION="1.20"
 ARG RUNNER_IMAGE="alpine:3.17"

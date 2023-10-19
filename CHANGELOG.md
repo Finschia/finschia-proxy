@@ -48,11 +48,13 @@ Ref: https://keepachangelog.com/en/1.0.0/
 * (build) [\#221](https://github.com/Finschia/finschia/pull/221) compile static binary as release assets and docker image
 * (swagger) [\#223](https://github.com/Finschia/finschia/pull/223) add integrated swagger for finschia
 * (wasm) [\#258](https://github.com/Finschia/finschia/pull/258) Bump up wasmd from dedcd9ec to 053c7e43
+* (finschia-sdk, ostracon, wasmd) [\#286](https://github.com/Finschia/finschia/pull/286) bump up fisnchia-sdk to v0.48.0 and Ostracon to v1.1.2 and wasmd to v0.2.0 
 
 ### Bug Fixes
 * (build) [\#236](https://github.com/Finschia/finschia/pull/236) fix compile error when the build_tags is multiple.
 * (wasm) [\#249](https://github.com/Finschia/finschia/pull/249) revert removing wasm configs
 * (finschia-sdk) [\#264](https://github.com/Finschia/finschia/pull/264) Bump up finschia-sdk from `0a27aef22921` to `022614f80a0d`
+* (build) [\#277](https://github.com/Finschia/finschia/pull/277) change to the default build method that uses a shared library
 
 ### Breaking Changes
 * (ostracon) [\#240](https://github.com/Finschia/finschia/pull/240) remove `libsodium` vrf library
@@ -65,8 +67,10 @@ Ref: https://keepachangelog.com/en/1.0.0/
 * (build) [\#237](https://github.com/Finschia/finschia/pull/237) rearrange Dockerfile and Makefile commands
 * (build) [\#241](https://github.com/Finschia/finschia/pull/241) Update golang version to 1.20
 * (build) [\#259](https://github.com/Finschia/finschia/pull/259) change default build to be compiled as static binary
+* (build) [\#284](https://github.com/Finschia/finschia/pull/284) use curl instead of wget on MacOS
 
 ### Docs
+* (docs) [\#281](https://github.com/Finschia/finschia/pull/281) Update guide for static build on CentOS 
 
 <!-- Release links -->
 [Unreleased]: https://github.com/Finschia/finschia/compare/v1.0.0...HEAD

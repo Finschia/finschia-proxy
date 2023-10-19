@@ -15,7 +15,7 @@ then
     then
         mode="testnet"
     fi
-    FNSAD="docker run -i -p 26656:26656 -p 26657:26657 -v ${CONFIG_DIR}:/root/.fnsap finschia/finschia-proxy fnsad-proxy"
+    FNSAD="docker run -i -p 26656:26656 -p 26657:26657 -v ${CONFIG_DIR}:/root/.fnsap finschia/finschianode-proxy fnsad-proxy"
     CHAIN_DIR="/root/.fnsap"
 elif [[ $1 == "testnet" ]]
 then
@@ -44,7 +44,7 @@ if [[ ${mode} == "testnet" ]]
 then
     if [[ $1 == "docker" ]]
     then
-        docker run -i -p 26656:26656 -p 26657:26657 -v ${CONFIG_DIR}:/root/.fnsap line/finschia-proxy sh -c "export FNSAD_TESTNET=true"
+        docker run -i -p 26656:26656 -p 26657:26657 -v ${CONFIG_DIR}:/root/.fnsap finschia/finschianode-proxy sh -c "export FNSAD_TESTNET=true"
     else
        export FNSAD_TESTNET=true
     fi
