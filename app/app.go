@@ -124,21 +124,11 @@ import (
 	ibchost "github.com/cosmos/ibc-go/v4/modules/core/24-host"
 	ibckeeper "github.com/cosmos/ibc-go/v4/modules/core/keeper"
 
-	//<<<<<<< HEAD
 	appante "github.com/Finschia/finschia-proxy/v2/ante"
 	appparams "github.com/Finschia/finschia-proxy/v2/app/params"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/Finschia/finschia-proxy/v2/client/docs/statik"
-	// =======
-	//
-	//	appante "github.com/Finschia/finschia/v2/ante"
-	//	appparams "github.com/Finschia/finschia/v2/app/params"
-	//
-	//	// unnamed import of statik for swagger UI support
-	//	_ "github.com/Finschia/finschia/v2/client/docs/statik"
-	//
-	// >>>>>>> remote-1/rc/v2.0.0-rcx
 )
 
 const appName = "Finschia"
@@ -275,13 +265,7 @@ func init() {
 		stdlog.Println("Failed to get home dir %2", err)
 	}
 
-	//<<<<<<< HEAD
 	DefaultNodeHome = filepath.Join(userHomeDir, ".fnsap")
-	// =======
-	//
-	//	DefaultNodeHome = filepath.Join(userHomeDir, ".finschia")
-	//
-	// >>>>>>> remote-1/rc/v2.0.0-rcx
 }
 
 // NewLinkApp returns a reference to an initialized Link.
