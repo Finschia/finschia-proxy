@@ -49,8 +49,6 @@ github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d/go.mod h1:
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/Finschia/finschia-sdk v0.48.0 h1:a9+nM4aPsgj0CbM0gT2O+C0OTtHjKbvDhSuU4+Qp1do=
 github.com/Finschia/finschia-sdk v0.48.0/go.mod h1:gn9aSs9dE4WgCnAKKiJRQQH8lyHjglxjtGcf9PaJBuw=
-github.com/Finschia/finschia/v2 v2.0.0-rc6 h1:dOvK7PB/4TbV5vSFT7WZdxIfLH2PRpkt6PhARQVouWo=
-github.com/Finschia/finschia/v2 v2.0.0-rc6/go.mod h1:OXhLHtF6rWY3IcDaxOLqp8OHOkAzczc4r2aulq+lyk8=
 github.com/Finschia/ibc-go/v4 v4.3.1 h1:pUKry0j+1/ypCC3X1TkEzoLrS1A/low/1PE2HZL+13k=
 github.com/Finschia/ibc-go/v4 v4.3.1/go.mod h1:kFZgmXXT2pt9QL7Ngx/eA7lI9JlOMGRG/oU4RTDXKcg=
 github.com/Finschia/ostracon v1.1.2 h1:JqP1RLTFHtCUr5I8njS698iJDz6YRXBsL06LnJy+8C8=
@@ -230,6 +228,7 @@ github.com/go-playground/universal-translator v0.17.0 h1:icxd5fm+REJzpZx7ZfpaD87
 github.com/go-playground/universal-translator v0.17.0/go.mod h1:UkSxE5sNxxRwHyU+Scu5vgOQjsIJAF8j9muTVoKLVtA=
 github.com/go-playground/validator/v10 v10.2.0/go.mod h1:uOYAAleCW8F/7oMFd6aG0GOhaH6EGOAJShg8Id5JGkI=
 github.com/go-playground/validator/v10 v10.4.1 h1:pH2c5ADXtd66mxoE0Zm9SUhxE20r7aM3F26W0hOn+GE=
+github.com/go-playground/validator/v10 v10.4.1/go.mod h1:nlOn6nFhuKACm19sB/8EGNn9GlaMV7XkbRSipzJ0Ii4=
 github.com/go-sql-driver/mysql v1.4.0/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
 github.com/go-stack/stack v1.8.0/go.mod h1:v0f6uXyyMGvRgIKkXu+yp6POWl0qKG85gN/melR3HDY=
 github.com/gobwas/httphead v0.0.0-20180130184737-2c6c146eadee h1:s+21KNqlpePfkah2I+gwHF8xmJWRjooY+5248k6m4A0=

@@ -7,8 +7,8 @@ before:
 builds:
 -
   id: "finschia"
-  main: ./cmd/fnsad
-  binary: build/fnsad
+  main: ./cmd/fnsad-proxy
+  binary: build/fnsad-proxy
   env:
     - CGO_ENABLED=0
   flags:
@@ -16,13 +16,13 @@ builds:
     - -tags=netgo ledger
   ldflags:
     - -X github.com/Finschia/finschia-sdk/version.Name=finschia
-    - -X github.com/Finschia/finschia-sdk/version.ServerName=finschia
+    - -X github.com/Finschia/finschia-sdk/version.ServerName=fnsad-proxy
     - -X github.com/Finschia/finschia-sdk/version.Version={{ .Version }}
     - -X github.com/Finschia/finschia-sdk/version.Commit={{ .FullCommit }}
     - -X "github.com/Finschia/finschia-sdk/version.BuildTags=netgo,ledger"
 archives:
 -
-  builds: ['fnsad']
+  builds: ['fnsad-proxy']
   replacements:
     darwin: Darwin
     linux: Linux
