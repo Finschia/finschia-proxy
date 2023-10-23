@@ -1,8 +1,8 @@
 # This Dockerfile is used for localnet multinode testing.
 # Simple usage with a mounted data directory:
 # > docker build --platform="linux/amd64" -t finschia/finschianode-proxy:localnet -f networks/local/finschianode-proxy . --build-arg ARCH=amd64
-# > docker run -it -p 26656:26656 -p 26657:26657 -v ~/.finschia:/root/.finschia -v networks/local/finschianode-proxy fnsad-proxy init
-# > docker run -it -p 26656:26656 -p 26657:26657 -v ~/.finschia:/root/.finschia -v networks/local/finschianode-proxy fnsad-proxy start --rpc.laddr=tcp://0.0.0.0:26657 --p2p.laddr=tcp://0.0.0.0:26656
+# > docker run -it -p 26656:26656 -p 26657:26657 -v ~/.finschia:/root/.finschia networks/local/finschianode-proxy fnsad-proxy init
+# > docker run -it -p 26656:26656 -p 26657:26657 -v ~/.finschia:/root/.finschia networks/local/finschianode-proxy fnsad-proxy start --rpc.laddr=tcp://0.0.0.0:26657 --p2p.laddr=tcp://0.0.0.0:26656
 
 ARG GO_VERSION="1.20"
 ARG RUNNER_IMAGE="alpine:3.17"

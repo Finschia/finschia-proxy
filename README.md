@@ -38,7 +38,7 @@ sh init_single.sh docker testnet  # prepare keys, validators, initial state, etc
 
 **Run**
 ```
-docker run -i -p 26656:26656 -p 26657:26657 -v ${HOME}/.fnsap:/root/.fnsap line/finschia-proxy fnsad-proxy start
+docker run -i -p 26656:26656 -p 26657:26657 -v ${HOME}/.fnsap:/root/.fnsap finschia/finschianode-proxy fnsad-proxy start
 ```
 
 ## Local
