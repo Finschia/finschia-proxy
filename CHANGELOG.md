@@ -49,4 +49,4 @@ Ref: https://keepachangelog.com/en/1.0.0/
 ### Docs
 
 <!-- Release links -->
-[Unreleased]: https://github.com/Finschia/finschia/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/Finschia/finschia/compare/v2.0.1...HEAD
