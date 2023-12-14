@@ -19,7 +19,7 @@ jobs:
         run: |
           git archive --format=tar.gz --prefix="fnsad-proxy-${{ env.VERSION }}/" HEAD -o fnsad-proxy-${{ env.VERSION }}.tar.gz
       - name: "Store compressed source"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: release-${{ env.VERSION }}
           path: |
@@ -52,7 +52,7 @@ jobs:
           mv fnsad-proxy-linux-${{ matrix.arch }} fnsad-proxy-${{ env.ID }}
 
       - name: Store artifact linux-${{ matrix.arch }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: release-${{ env.VERSION }}
           path: |
