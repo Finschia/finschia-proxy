@@ -2,19 +2,20 @@ package helpers
 
 import (
 	"encoding/json"
+	sdk "github.com/Finschia/finschia-sdk/types"
+	minttypes "github.com/Finschia/finschia-sdk/x/mint/types"
 	"testing"
 	"time"
 
-	sdk "github.com/Finschia/finschia-sdk/types"
-	minttypes "github.com/Finschia/finschia-sdk/x/mint/types"
-	"github.com/Finschia/ostracon/libs/log"
-	octypes "github.com/Finschia/ostracon/types"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	linkapp "github.com/Finschia/finschia-proxy/v2/app"
+	"github.com/Finschia/ostracon/libs/log"
+	octypes "github.com/Finschia/ostracon/types"
+
+	linkapp "github.com/Finschia/finschia-proxy/v3/app"
 )
 
 // SimAppChainID hardcoded chainID for simulation

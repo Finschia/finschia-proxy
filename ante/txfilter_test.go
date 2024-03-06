@@ -12,8 +12,8 @@ import (
 	lbmwasmtypes "github.com/Finschia/wasmd/x/wasmplus/types"
 	"github.com/stretchr/testify/require"
 
-	"github.com/Finschia/finschia-proxy/v2/ante"
-	linkhelper "github.com/Finschia/finschia-proxy/v2/app/helpers"
+	"github.com/Finschia/finschia-proxy/v3/ante"
+	linkhelper "github.com/Finschia/finschia-proxy/v3/app/helpers"
 )
 
 func TestGenWhiteRegex(t *testing.T) {

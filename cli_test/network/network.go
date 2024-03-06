@@ -45,7 +45,7 @@ import (
 	"github.com/Finschia/finschia-sdk/x/genutil"
 	stakingtypes "github.com/Finschia/finschia-sdk/x/staking/types"
 
-	lbmcmd "github.com/Finschia/finschia-proxy/v2/cmd/fnsad-proxy/cmd"
+	lbmcmd "github.com/Finschia/finschia-proxy/v3/cmd/fnsad-proxy/cmd"
 )
 
 // package-wide network lock to only allow one test network at a time

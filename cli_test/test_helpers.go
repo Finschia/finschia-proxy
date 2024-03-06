@@ -32,7 +32,6 @@ import (
 	storetypes "github.com/Finschia/finschia-sdk/store/types"
 	"github.com/Finschia/finschia-sdk/testutil"
 	testcli "github.com/Finschia/finschia-sdk/testutil/cli"
-
 	sdk "github.com/Finschia/finschia-sdk/types"
 	"github.com/Finschia/finschia-sdk/types/tx"
 	authcli "github.com/Finschia/finschia-sdk/x/auth/client/cli"
@@ -52,21 +51,20 @@ import (
 	stakingcli "github.com/Finschia/finschia-sdk/x/staking/client/cli"
 	staking "github.com/Finschia/finschia-sdk/x/staking/types"
 	"github.com/Finschia/finschia-sdk/x/stakingplus"
-	wasmcli "github.com/Finschia/wasmd/x/wasm/client/cli"
-
 	ostcmd "github.com/Finschia/ostracon/cmd/ostracon/commands"
 	ostcfg "github.com/Finschia/ostracon/config"
 	"github.com/Finschia/ostracon/libs/log"
 	osthttp "github.com/Finschia/ostracon/rpc/client/http"
 	ostctypes "github.com/Finschia/ostracon/rpc/core/types"
 	osttypes "github.com/Finschia/ostracon/types"
+	wasmcli "github.com/Finschia/wasmd/x/wasm/client/cli"
 	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
 
-	proxyante "github.com/Finschia/finschia-proxy/v2/ante"
-	"github.com/Finschia/finschia-proxy/v2/app"
-	testnet "github.com/Finschia/finschia-proxy/v2/cli_test/network"
-	fnsacmd "github.com/Finschia/finschia-proxy/v2/cmd/fnsad-proxy/cmd"
-	fnsatypes "github.com/Finschia/finschia-proxy/v2/types"
+	proxyante "github.com/Finschia/finschia-proxy/v3/ante"
+	"github.com/Finschia/finschia-proxy/v3/app"
+	testnet "github.com/Finschia/finschia-proxy/v3/cli_test/network"
+	fnsacmd "github.com/Finschia/finschia-proxy/v3/cmd/fnsad-proxy/cmd"
+	fnsatypes "github.com/Finschia/finschia-proxy/v3/types"
 )
 
 const (
