@@ -3,7 +3,7 @@
   "info": {
     "title": "Finschia - gRPC Gateway docs",
     "description": "A REST interface for state queries, legacy transactions",
-    "version": "3.0.0"
+    "version": "2.0.0"
   },
   "apis": [
     {
@@ -135,6 +135,37 @@
           "Votes": "FoundationVotes",
           "TallyResult": "FoundationTallyResult",
           "Grants": "FoundationGrants"
+        }
+      }
+    },
+    {
+      "url": "./tmp-swagger-gen/lbm/token/v1/query.swagger.json",
+      "operationIds": {
+        "rename": {
+          "Params": "TokenParams",
+          "Balance": "TokenBalance",
+          "AllBalances": "TokenAllBalances",
+          "GranteeGrants": "TokenGranteeGrants",
+          "Approved": "TokenApproved",
+          "Approvers": "TokenApprovers",
+          "Supply": "TokenSupply",
+          "Minted": "TokenMinted",
+          "Burnt": "TokenBurnt",
+          "Contract": "TokenContract"
+        }
+      }
+    },
+    {
+      "url": "./tmp-swagger-gen/lbm/collection/v1/query.swagger.json",
+      "operationIds": {
+        "rename": {
+          "Params": "CollectionParams",
+          "Balance": "CollectionBalance",
+          "AllBalances": "CollectionAllBalances",
+          "GranteeGrants": "CollectionGranteeGrants",
+          "Approved": "CollectionApproved",
+          "Approvers": "CollectionApprovers",
+          "Contract": "CollectionContract"
         }
       }
     },

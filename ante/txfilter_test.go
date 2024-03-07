@@ -3,8 +3,6 @@ package ante_test
 import (
 	"testing"
 
-	"github.com/stretchr/testify/require"
-
 	cryptotypes "github.com/Finschia/finschia-sdk/crypto/types"
 	"github.com/Finschia/finschia-sdk/testutil/testdata"
 	sdk "github.com/Finschia/finschia-sdk/types"
@@ -12,9 +10,10 @@ import (
 	stakingtypes "github.com/Finschia/finschia-sdk/x/staking/types"
 	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
 	lbmwasmtypes "github.com/Finschia/wasmd/x/wasmplus/types"
+	"github.com/stretchr/testify/require"
 
-	"github.com/Finschia/finschia-proxy/v3/ante"
-	linkhelper "github.com/Finschia/finschia-proxy/v3/app/helpers"
+	"github.com/Finschia/finschia-proxy/v2/ante"
+	linkhelper "github.com/Finschia/finschia-proxy/v2/app/helpers"
 )
 
 func TestGenWhiteRegex(t *testing.T) {
