@@ -6,7 +6,7 @@ import (
 	sdkerrors "github.com/Finschia/finschia-sdk/types/errors"
 	"github.com/Finschia/finschia-sdk/x/auth/ante"
 
-	proxyante "github.com/Finschia/finschia-proxy/v2/ante"
+	proxyante "github.com/Finschia/finschia-proxy/v3/ante"
 )
 
 func NewAnteHandler(options ante.HandlerOptions, appOpts servertypes.AppOptions) (sdk.AnteHandler, error) {

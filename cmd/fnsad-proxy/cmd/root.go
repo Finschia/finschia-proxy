@@ -7,6 +7,12 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/spf13/cast"
+	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+	dbm "github.com/tendermint/tm-db"
+
 	"github.com/Finschia/finschia-sdk/baseapp"
 	"github.com/Finschia/finschia-sdk/client"
 	"github.com/Finschia/finschia-sdk/client/config"
@@ -31,15 +37,10 @@ import (
 	"github.com/Finschia/ostracon/libs/log"
 	"github.com/Finschia/wasmd/x/wasm"
 	wasmkeeper "github.com/Finschia/wasmd/x/wasm/keeper"
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/spf13/cast"
-	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
-	dbm "github.com/tendermint/tm-db"
 
-	"github.com/Finschia/finschia-proxy/v2/app"
-	"github.com/Finschia/finschia-proxy/v2/app/params"
-	fnsatypes "github.com/Finschia/finschia-proxy/v2/types"
+	"github.com/Finschia/finschia-proxy/v3/app"
+	"github.com/Finschia/finschia-proxy/v3/app/params"
+	fnsatypes "github.com/Finschia/finschia-proxy/v3/types"
 )
 
 const (
