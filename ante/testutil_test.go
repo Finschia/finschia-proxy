@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"testing"
 
-	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
@@ -20,10 +19,11 @@ import (
 	xauthsigning "github.com/Finschia/finschia-sdk/x/auth/signing"
 	authtypes "github.com/Finschia/finschia-sdk/x/auth/types"
 	minttypes "github.com/Finschia/finschia-sdk/x/mint/types"
+	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
 
-	proxyante "github.com/Finschia/finschia-proxy/v2/ante"
-	linkapp "github.com/Finschia/finschia-proxy/v2/app"
-	linkhelper "github.com/Finschia/finschia-proxy/v2/app/helpers"
+	proxyante "github.com/Finschia/finschia-proxy/v3/ante"
+	linkapp "github.com/Finschia/finschia-proxy/v3/app"
+	linkhelper "github.com/Finschia/finschia-proxy/v3/app/helpers"
 )
 
 // TestAccount represents an account used in the tests in x/auth/ante.
