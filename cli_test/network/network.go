@@ -14,6 +14,11 @@ import (
 	"testing"
 	"time"
 
+	ostcfg "github.com/Finschia/ostracon/config"
+	ostlog "github.com/Finschia/ostracon/libs/log"
+	ostrand "github.com/Finschia/ostracon/libs/rand"
+	"github.com/Finschia/ostracon/node"
+	ostclient "github.com/Finschia/ostracon/rpc/client"
 	"github.com/stretchr/testify/require"
 	dbm "github.com/tendermint/tm-db"
 	"google.golang.org/grpc"
@@ -39,13 +44,8 @@ import (
 	banktypes "github.com/Finschia/finschia-sdk/x/bank/types"
 	"github.com/Finschia/finschia-sdk/x/genutil"
 	stakingtypes "github.com/Finschia/finschia-sdk/x/staking/types"
-	ostcfg "github.com/Finschia/ostracon/config"
-	ostlog "github.com/Finschia/ostracon/libs/log"
-	ostrand "github.com/Finschia/ostracon/libs/rand"
-	"github.com/Finschia/ostracon/node"
-	ostclient "github.com/Finschia/ostracon/rpc/client"
 
-	lbmcmd "github.com/Finschia/finschia-proxy/v3/cmd/fnsad-proxy/cmd"
+	lbmcmd "github.com/Finschia/finschia-proxy/v2/cmd/fnsad-proxy/cmd"
 )
 
 // package-wide network lock to only allow one test network at a time

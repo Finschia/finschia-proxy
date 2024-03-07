@@ -5,13 +5,6 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/Finschia/finschia-sdk/server/api"
-	servergrpc "github.com/Finschia/finschia-sdk/server/grpc"
-	srvtypes "github.com/Finschia/finschia-sdk/server/types"
-	authtypes "github.com/Finschia/finschia-sdk/x/auth/types"
-	banktypes "github.com/Finschia/finschia-sdk/x/bank/types"
-	"github.com/Finschia/finschia-sdk/x/genutil"
-	genutiltypes "github.com/Finschia/finschia-sdk/x/genutil/types"
 	ostos "github.com/Finschia/ostracon/libs/os"
 	"github.com/Finschia/ostracon/node"
 	"github.com/Finschia/ostracon/p2p"
@@ -20,6 +13,14 @@ import (
 	"github.com/Finschia/ostracon/rpc/client/local"
 	"github.com/Finschia/ostracon/types"
 	osttime "github.com/Finschia/ostracon/types/time"
+
+	"github.com/Finschia/finschia-sdk/server/api"
+	servergrpc "github.com/Finschia/finschia-sdk/server/grpc"
+	srvtypes "github.com/Finschia/finschia-sdk/server/types"
+	authtypes "github.com/Finschia/finschia-sdk/x/auth/types"
+	banktypes "github.com/Finschia/finschia-sdk/x/bank/types"
+	"github.com/Finschia/finschia-sdk/x/genutil"
+	genutiltypes "github.com/Finschia/finschia-sdk/x/genutil/types"
 )
 
 func startInProcess(cfg Config, val *Validator) error {
