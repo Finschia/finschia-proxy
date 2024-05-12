@@ -13,8 +13,8 @@ import (
 	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
 	lbmwasmtypes "github.com/Finschia/wasmd/x/wasmplus/types"
 
-	"github.com/Finschia/finschia-proxy/v3/ante"
-	linkhelper "github.com/Finschia/finschia-proxy/v3/app/helpers"
+	"github.com/Finschia/finschia-proxy/v4/ante"
+	linkhelper "github.com/Finschia/finschia-proxy/v4/app/helpers"
 )
 
 func TestGenWhiteRegex(t *testing.T) {

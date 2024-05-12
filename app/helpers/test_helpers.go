@@ -15,7 +15,7 @@ import (
 	"github.com/Finschia/ostracon/libs/log"
 	octypes "github.com/Finschia/ostracon/types"
 
-	linkapp "github.com/Finschia/finschia-proxy/v3/app"
+	linkapp "github.com/Finschia/finschia-proxy/v4/app"
 )
 
 // SimAppChainID hardcoded chainID for simulation
@@ -44,7 +44,7 @@ var DefaultConsensusParams = &abci.ConsensusParams{
 
 type EmptyAppOptions struct{}
 
-func (EmptyAppOptions) Get(o string) interface{} { return nil }
+func (EmptyAppOptions) Get(_ string) interface{} { return nil }
 
 func Setup(t *testing.T, isCheckTx bool, invCheckPeriod uint) *linkapp.LinkApp {
 	t.Helper()

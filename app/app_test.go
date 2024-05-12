@@ -40,7 +40,7 @@ import (
 	"github.com/Finschia/ostracon/libs/log"
 	"github.com/Finschia/wasmd/x/wasmplus"
 
-	proxyante "github.com/Finschia/finschia-proxy/v3/ante"
+	proxyante "github.com/Finschia/finschia-proxy/v4/ante"
 )
 
 func TestSimAppExportAndBlockedAddrs(t *testing.T) {

@@ -17,8 +17,8 @@ import (
 	xauthsigning "github.com/Finschia/finschia-sdk/x/auth/signing"
 	ocrand "github.com/Finschia/ostracon/libs/rand"
 
-	linkapp "github.com/Finschia/finschia-proxy/v3/app"
-	linkhelpers "github.com/Finschia/finschia-proxy/v3/app/helpers"
+	linkapp "github.com/Finschia/finschia-proxy/v4/app"
+	linkhelpers "github.com/Finschia/finschia-proxy/v4/app/helpers"
 )
 
 type IntegrationTestSuite struct {

@@ -21,9 +21,9 @@ import (
 	minttypes "github.com/Finschia/finschia-sdk/x/mint/types"
 	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
 
-	proxyante "github.com/Finschia/finschia-proxy/v3/ante"
-	linkapp "github.com/Finschia/finschia-proxy/v3/app"
-	linkhelper "github.com/Finschia/finschia-proxy/v3/app/helpers"
+	proxyante "github.com/Finschia/finschia-proxy/v4/ante"
+	linkapp "github.com/Finschia/finschia-proxy/v4/app"
+	linkhelper "github.com/Finschia/finschia-proxy/v4/app/helpers"
 )
 
 // TestAccount represents an account used in the tests in x/auth/ante.

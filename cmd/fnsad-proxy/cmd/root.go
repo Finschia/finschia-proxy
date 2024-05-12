@@ -38,9 +38,9 @@ import (
 	"github.com/Finschia/wasmd/x/wasm"
 	wasmkeeper "github.com/Finschia/wasmd/x/wasm/keeper"
 
-	"github.com/Finschia/finschia-proxy/v3/app"
-	"github.com/Finschia/finschia-proxy/v3/app/params"
-	fnsatypes "github.com/Finschia/finschia-proxy/v3/types"
+	"github.com/Finschia/finschia-proxy/v4/app"
+	"github.com/Finschia/finschia-proxy/v4/app/params"
+	fnsatypes "github.com/Finschia/finschia-proxy/v4/types"
 )
 
 const (
