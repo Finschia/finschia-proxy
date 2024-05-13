@@ -43,6 +43,7 @@ Ref: https://keepachangelog.com/en/1.0.0/
 * (fswap, fbridge) [\#359](https://github.com/Finschia/finschia/pull/359) Bump finschia-sdk v0.49.0-rc2 to v0.49.0-rc3
 * (fswap, fbridge) [\#365](https://github.com/Finschia/finschia/pull/365) Load fbridge & fswap stores
 * (fswap) [\#366](https://github.com/Finschia/finschia/pull/366) Bump github.com/Finschia/finschia-sdk from v0.49.0-rc3 to v0.49.0-rc4
+* (fswap, fbridge) [\#373](https://github.com/Finschia/finschia/pull/373) Bump github.com/Finschia/finschia-sdk from v0.49.0-rc4 to v0.49.0-rc5
 
 ### Improvements
 
@@ -55,6 +56,7 @@ Ref: https://keepachangelog.com/en/1.0.0/
 * (build) [\#340](https://github.com/Finschia/finschia/pull/340) Set Finschia/ostracon version
 * (ci) [\#361](https://github.com/Finschia/finschia/pull/361) Replace deprecated linters with new ones
 * (ci) [\#362](https://github.com/Finschia/finschia/pull/362) Add RELEASE_NOTE.md to .gitignore
+* (swagger) [\#371](https://github.com/Finschia/finschia/pull/371) Add fswap and fbridge swagger settings in swagger config 
 
 ### Docs
 
