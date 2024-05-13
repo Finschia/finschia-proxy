@@ -45,7 +45,7 @@ import (
 	"github.com/Finschia/ostracon/node"
 	ostclient "github.com/Finschia/ostracon/rpc/client"
 
-	lbmcmd "github.com/Finschia/finschia-proxy/v3/cmd/fnsad-proxy/cmd"
+	lbmcmd "github.com/Finschia/finschia-proxy/v4/cmd/fnsad-proxy/cmd"
 )
 
 // package-wide network lock to only allow one test network at a time

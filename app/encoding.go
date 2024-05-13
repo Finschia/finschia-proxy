@@ -3,7 +3,7 @@ package app
 import (
 	"github.com/Finschia/finschia-sdk/std"
 
-	"github.com/Finschia/finschia-proxy/v3/app/params"
+	"github.com/Finschia/finschia-proxy/v4/app/params"
 )
 
 // MakeEncodingConfig creates an EncodingConfig for testing
