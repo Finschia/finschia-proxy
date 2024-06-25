@@ -5,13 +5,14 @@ import (
 
 	"github.com/stretchr/testify/require"
 
+	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
+	lbmwasmtypes "github.com/Finschia/wasmd/x/wasmplus/types"
+
 	cryptotypes "github.com/Finschia/finschia-sdk/crypto/types"
 	"github.com/Finschia/finschia-sdk/testutil/testdata"
 	sdk "github.com/Finschia/finschia-sdk/types"
 	banktypes "github.com/Finschia/finschia-sdk/x/bank/types"
 	stakingtypes "github.com/Finschia/finschia-sdk/x/staking/types"
-	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
-	lbmwasmtypes "github.com/Finschia/wasmd/x/wasmplus/types"
 
 	"github.com/Finschia/finschia-proxy/v4/ante"
 	linkhelper "github.com/Finschia/finschia-proxy/v4/app/helpers"
@@ -28,7 +29,6 @@ func TestGenWhiteRegex(t *testing.T) {
 	}
 
 	for _, tc := range tcs {
-		tc := tc
 		if tc.ispanic {
 			require.Panics(t, func() { ante.GenAllowedMsgRegex(tc.allowed) }, "this type is not supported")
 		} else {

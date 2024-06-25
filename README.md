@@ -4,7 +4,7 @@ Finschia-Proxy is forked from [finschia](https://github.com/Finschia/finschia).
 Finschia-Proxy is the mainnet proxy app implementation filtering tx. Other functions are the same as those of finschia.
 Tx filtering is the function allowing only register tx type in allow list.
 
-**Node**: Requires [Go 1.20+](https://golang.org/dl/)
+**Node**: Requires [Go 1.22+](https://golang.org/dl/)
 
 **Warnings**: Initial development is in progress, but there has not yet been a stable.
 
