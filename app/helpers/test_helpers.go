@@ -10,10 +10,11 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	sdk "github.com/Finschia/finschia-sdk/types"
-	minttypes "github.com/Finschia/finschia-sdk/x/mint/types"
 	"github.com/Finschia/ostracon/libs/log"
 	octypes "github.com/Finschia/ostracon/types"
+
+	sdk "github.com/Finschia/finschia-sdk/types"
+	minttypes "github.com/Finschia/finschia-sdk/x/mint/types"
 
 	linkapp "github.com/Finschia/finschia-proxy/v4/app"
 )

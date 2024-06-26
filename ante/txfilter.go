@@ -7,9 +7,10 @@ import (
 
 	"github.com/spf13/cast"
 
+	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
+
 	servertypes "github.com/Finschia/finschia-sdk/server/types"
 	sdk "github.com/Finschia/finschia-sdk/types"
-	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
 )
 
 const (

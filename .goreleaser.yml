@@ -1,5 +1,7 @@
 project_name: fnsad-proxy
 
+version: 2
+
 env:
   - CGO_ENABLED=1
 
@@ -107,6 +109,3 @@ checksum:
 
 snapshot:
   name_template: SNAPSHOT-{{ .Commit }}
-
-changelog:
-  skip: false

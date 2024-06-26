@@ -8,6 +8,8 @@ import (
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
+	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
+
 	"github.com/Finschia/finschia-sdk/client"
 	"github.com/Finschia/finschia-sdk/client/tx"
 	cryptotypes "github.com/Finschia/finschia-sdk/crypto/types"
@@ -19,7 +21,6 @@ import (
 	xauthsigning "github.com/Finschia/finschia-sdk/x/auth/signing"
 	authtypes "github.com/Finschia/finschia-sdk/x/auth/types"
 	minttypes "github.com/Finschia/finschia-sdk/x/mint/types"
-	wasmtypes "github.com/Finschia/wasmd/x/wasm/types"
 
 	proxyante "github.com/Finschia/finschia-proxy/v4/ante"
 	linkapp "github.com/Finschia/finschia-proxy/v4/app"
@@ -45,6 +46,7 @@ type AnteTestSuite struct {
 
 // returns context and app with params set on account keeper
 func createTestApp(t *testing.T, isCheckTx bool, invCheckPeriod uint) (*linkapp.LinkApp, sdk.Context) {
+	t.Helper()
 	app := linkhelper.Setup(t, isCheckTx, invCheckPeriod)
 	ctx := app.BaseApp.NewContext(isCheckTx, tmproto.Header{})
 	app.AccountKeeper.SetParams(ctx, authtypes.DefaultParams())
@@ -88,7 +90,7 @@ func (suite *AnteTestSuite) SetupTest(isCheckTx bool, invCheckPeriod uint) {
 
 // CreateTestAccounts creates `numAccs` accounts, and return all relevant
 // information about them including their private keys.
-func (suite *AnteTestSuite) CreateTestAccounts(numAccs int) []TestAccount {
+func (suite *AnteTestSuite) CreateTestAccounts(_ int) []TestAccount {
 	accounts := make([]TestAccount, 2)
 
 	for i := range accounts {
